@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button {
+            width: 200px;
+            height: 70px;
+        }
+    </style>
+    <title>Antes e Depois</title>
+</head>
+<body>
+    <h1>Antes e Depois</h1>
+    <button onclick="antesedepois()">Antecessor e Sucessor</button>
+
+    <script>
+        
+        function antesedepois(){
+            let numero = parseInt(prompt("Digite um numero inteiro:"));
+
+            if(!isNaN(numero)) {
+                let antecessor = numero -1;
+                let sucessor = numero + 1;
+                alert(`Antes de ${numero}, temos o numero ${antecessor} e Depois de ${numero}, temos o numero ${sucessor}.`);
+            }else {
+                alert("porfavor digite um numero")
+            }
+            
+        }
+    </script>
+
+
+</body>
+</html>

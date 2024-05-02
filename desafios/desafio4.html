@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button {
+            width: 200px;
+            height: 70px;
+        }
+    </style>
+    <title>calcula troco</title>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <button onclick="calcular()">Comprar produto</button>
+
+    <script>
+        // função para chamar o evento click e variaveis para quardar um valor
+
+        function calcular() {
+            let produto = prompt("Que produto você esta comprando?");
+            let custo = parseInt(prompt(`Quanto Custa ${produto} que você está comprando?`));
+            let pagamento = parseInt(prompt(`Qual foi o valor que você deu para pagar o ${produto}?`))
+
+            // verificar se o usuario digitou um valor e se digitou o valor maior que o custo do produto
+            if (isNaN(custo) || isNaN(pagamento)) {
+                window.alert("porfavor Digite um valor para proceguir");
+            } else if (pagamento < custo) {
+                window.alert("pagamento menor que o custo do protudo por favor digite um outro valor");
+            } else {
+                let troco = pagamento - custo;
+                window.alert(`Você comprou ${produto} que custou ${custo}. Deu R$ ${pagamento} em dinheiro e vai receber R$ ${troco} de troco. Volte Sempre`)
+            }
+
+        }
+    </script>
+</body>
+</html>
