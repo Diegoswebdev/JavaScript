@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 200px;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: rgb(45, 83, 83);
+        }
+
+        div {
+            margin-top: 40px ;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            
+            
+        }
+    </style>
+    <title>conversor de temperaturas</title>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="conversor()">Converter</button>
+    <div id="resultado"><p>clique no botão acima para iniciar</p></div>
+    <script>
+        function conversor(){
+            // obter a temparatura pela digitação do usuario
+
+            let c = parseFloat(prompt("Digite um temperatura em °C(Celsius)."));
+
+            let k = c  + 273.15;
+            let f =  ( c * 9/5) + 32;
+
+            let resultado = `${k}°K(Kelvin)<br>${f}°F (Fahrenheit)`;
+
+           document.getElementById('resultado').innerHTML = `<strong>A tempratura de ${c}°C, corresponde a...</strong><br> ${resultado}`;
+        }
+
+
+
+    </script>
+</body>
+</html>
