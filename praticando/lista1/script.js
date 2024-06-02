@@ -1,20 +1,23 @@
+// selecionando o doculmento
+const produtoInputs = document.querySelector('.produto');
+const codigoInputs = document.querySelector('.codigo');
+const criarLista = document.querySelector('#res')
+const btn = document.getElementById('btn');
 
-document.getElementById('btn').addEventListener('click', function(event){
-    event.preventDefault(); // Evita o envio do formulário
-    const produto = document.getElementById('Produto').value
-    const ean = document.getElementById('ean').value
+// função
+
+btn.addEventListener("click", (e)=> {
+    e.preventDefault();
+    const inputValueP = produtoInputs.value;
+    const inputValueC = codigoInputs.value
+    const li = document.createElement('li')
     
-    
-    // Cria um novo elemento de lista
-    const li = document.createElement('li');
-    li.textContent = `Descrição do Produto: ${produto}<br>Codigo do Produto: ${ean}`
 
-    // Adiciona o novo elemento à lista
-    document.getElementById('registrado').appendChild('li')
-
-     // Limpa os campos do formulário
-     document.getElementById('Produto').value =''
-     document.getElementById('ean').value = ''
-
+    if(inputValueP && inputValueC){
+       li.innerHTML += `Descrição do Produto: ${inputValueP}<br> Codigo do Produto: ${inputValueC}<br><hr>`
+       document.getElementById('res').appendChild(li);
+       criarLista.style.display = "block";    
+    } else {
+        alert('nada para registrar')
+    }
 })
-    
